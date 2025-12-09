@@ -1,0 +1,5 @@
+{
+    "language": "sql",
+    "title": "Relacje 1:1 i Integralność Danych",
+    "description": "20 ćwiczeń z baz danych MySQL: projektowanie relacji 1:1, wymuszanie unikalności (UNIQUE), klucze obce i złączenia (JOIN)."
+}

@@ -23,7 +23,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-Dodaj ręcznie jednego użytkownika testowego (pamiętaj, że hasło w bazie musi być hashem! Możesz wygenerować hash np. w PHP funkcją `password_hash('tajnehaslo', PASSWORD_DEFAULT)` i wkleić go do bazy w phpMyAdmin, lub napisać krótki skrypt rejestracji).
+Dodaj ręcznie jednego użytkownika testowego (pamiętaj, że hasło w bazie musi być hashem! Możesz wygenerować hash np. w PHP funkcją `password('tajnehaslo', PASSWORD_DEFAULT)` i wkleić go do bazy w phpMyAdmin, lub napisać krótki skrypt rejestracji).
 
 > [!IMPORTANT]
 > **Commit 1**: Stworzenie struktury bazy danych (zapisz zapytania SQL w pliku np. `db.sql`).
@@ -113,16 +113,4 @@ header('Location: index.php');
 Pamiętaj o regularnym zapisywaniu postępów (commitowaniu).
 
 1.  **Konfiguracja (jeśli robisz to pierwszy raz):**
-    Otwórz terminal w folderze projektu i wpisz (podstawiając swoje dane):
-    ```bash
-    git config --global user.name "Twoje Imie"
-    git config --global user.email "twoj.email@example.com"
-    ```
-
-2.  **Robienie Commita:**
-    Po wykonaniu każdego punktu z listy wyżej, wpisz w terminalu:
-    ```bash
-    git add .
-    git commit -m "Zadanie 101: Punkt X wykonany"
-    ```
-    (Gdzie X to numer punktu, np. "Commit 1: Stworzenie bazy").
+    Otwórz terminal w folderze projektu i wpisz (podstawiając sw

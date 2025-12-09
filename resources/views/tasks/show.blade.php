@@ -68,4 +68,46 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('pre').forEach(pre => {
+            // Create wrapper
+            const wrapper = document.createElement('div');
+            wrapper.className = 'relative group';
+            
+            // Insert wrapper before pre, then move pre into wrapper
+            pre.parentNode.insertBefore(wrapper, pre);
+            wrapper.appendChild(pre);
+
+            // Create button
+            const button = document.createElement('button');
+            button.className = 'absolute top-2 right-2 px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-200 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-blue-100 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500';
+            button.innerText = 'Kopiuj';
+            button.setAttribute('aria-label', 'Kopiuj kod');
+            
+            button.addEventListener('click', () => {
+                const code = pre.querySelector('code');
+                const text = code ? code.innerText : pre.innerText;
+                
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = button.innerText;
+                    button.innerText = 'Skopiowano!';
+                    button.classList.add('text-green-700', 'bg-green-100');
+                    button.classList.remove('text-gray-500', 'bg-gray-200');
+                    
+                    setTimeout(() => {
+                        button.innerText = originalText;
+                        button.classList.remove('text-green-700', 'bg-green-100');
+                        button.classList.add('text-gray-500', 'bg-gray-200');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Błąd kopiowania:', err);
+                    button.innerText = 'Błąd';
+                });
+            });
+
+            wrapper.appendChild(button);
+        });
+    });
+</script>
 @endsection
