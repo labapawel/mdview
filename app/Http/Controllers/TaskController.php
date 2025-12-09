@@ -15,23 +15,37 @@ class TaskController extends Controller
         $this->storagePath = storage_path('app/private');
     }
 
-    public function index(Request $request)
+    public function categories()
+    {
+        if (!File::exists($this->storagePath)) {
+            return view('categories.index', ['categories' => []]);
+        }
+
+        $allCategoryDirs = File::directories($this->storagePath);
+        $categories = array_map(fn($path) => basename($path), $allCategoryDirs);
+
+        return view('categories.index', compact('categories'));
+    }
+
+    public function index(Request $request, $category = null)
     {
         $categories = [];
         $query = $request->input('query');
-        $selectedCategory = $request->input('category');
+        
+        // If category is passed via route, use it. Otherwise fall back to request input (legacy/fallback)
+        $selectedCategory = $category ?? $request->input('category');
 
         if (!File::exists($this->storagePath)) {
             return view('tasks.index', ['categories' => [], 'filters' => ['query' => $query, 'category' => $selectedCategory]]);
         }
 
         $allCategoryDirs = File::directories($this->storagePath);
-        $availableCategories = array_map(fn($path) => basename($path), $allCategoryDirs);
+        // $availableCategories = array_map(fn($path) => basename($path), $allCategoryDirs); // No longer needed in index if we only show one category
 
         foreach ($allCategoryDirs as $categoryDir) {
             $categoryName = basename($categoryDir);
 
-            // Filter by Category
+            // Filter by Category if selected
             if ($selectedCategory && $selectedCategory !== $categoryName) {
                 continue;
             }
@@ -66,7 +80,7 @@ class TaskController extends Controller
 
                 // Filter by Search Query
                 if ($query) {
-                    $searchable = strtolower($taskData['title'] . ' ' . $taskData['description']);
+                    $searchable = strtolower($taskData['title'] . ' ' . $taskData['description'] . ' ' . $taskData['slug']);
                     if (!str_contains($searchable, strtolower($query))) {
                         continue;
                     }
@@ -80,7 +94,7 @@ class TaskController extends Controller
             }
         }
 
-        return view('tasks.index', compact('categories', 'availableCategories'));
+        return view('tasks.index', compact('categories', 'selectedCategory'));
     }
 
     public function show($category, $taskSlug)

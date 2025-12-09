@@ -25,11 +25,11 @@
         <!-- Header -->
         <header class="bg-white shadow-sm sticky top-0 z-10">
             <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-                <a href="{{ route('tasks.index') }}" class="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
+                <a href="{{ route('categories.index') }}" class="text-2xl font-bold text-blue-600 hover:text-blue-800 transition">
                     {{ config('app.name', 'Task Viewer') }}
                 </a>
                 <nav>
-                    <a href="{{ route('tasks.index') }}" class="text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Strona główna</a>
+                    <a href="{{ route('categories.index') }}" class="text-gray-600 hover:text-blue-600 font-medium px-3 py-2">Strona główna</a>
                 </nav>
             </div>
         </header>
@@ -42,7 +42,7 @@
         <!-- Footer -->
         <footer class="bg-white border-t border-gray-200 mt-auto">
             <div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500 text-sm">
-                &copy; {{ date('Y') }} {{ config('app.name', 'Task Viewer') }}. Autor: Paweł Pabło. Wszelkie prawa zastrzeżone.
+                &copy; {{ date('Y') }} {{ config('app.name', 'Task Viewer') }}. Autor: Paweł Łaba. Wszelkie prawa zastrzeżone.
             </div>
         </footer>
     </div>

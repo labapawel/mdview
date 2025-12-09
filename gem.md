@@ -6,4 +6,7 @@ plik zadanie.json zawiera informacje o zadaniu np. tytuł, opis, priorytet, data
 plik zadanie.md zawiera opis zadania w formacie markdown
 program powinien umożliwić przeglądanie bez edycji zadań z formatowaniem
 
-serv jest uruchomiony na porcie 8000
+serwis działa pod adresem https://mdview.t24.ovh/
+
+strona główna pokazuje wszystkie kategorie zadań w formie kawelek
+strona kategori pokazuje zadania z danej podkategorii. z wiltrami wylistowane
