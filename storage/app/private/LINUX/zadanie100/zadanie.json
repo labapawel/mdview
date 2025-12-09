@@ -1,0 +1,5 @@
+{
+    "language": "linux",
+    "title": "Konfiguracja i Zabezpieczanie SSH",
+    "description": "Kompleksowa konfiguracja serwera OpenSSH: logowanie kluczami, wyłączanie haseł, białe listy użytkowników i hardening (porty, root)."
+}

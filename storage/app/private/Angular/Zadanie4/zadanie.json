@@ -1,0 +1,5 @@
+{
+    "language": "angular",
+    "title": "Aktywne Menu (Routing)",
+    "description": "Nauczysz się stylować aktywne elementy menu, używając dyrektywy routerLinkActive i konfigurując dokładne dopasowanie ścieżek."
+}

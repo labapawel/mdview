@@ -1,0 +1,5 @@
+{
+    "language": "php",
+    "title": "System Logowania z Uprawnieniami",
+    "description": "Stworzysz kompletny system logowania z bazą danych, bezpiecznym haszowaniem haseł i systemem ról (Admin/User)."
+}

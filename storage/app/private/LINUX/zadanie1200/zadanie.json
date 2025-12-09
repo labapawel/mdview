@@ -1,0 +1,5 @@
+{
+    "language": "linux",
+    "title": "Tworzenie i Zarządzanie RAM Dyskiem",
+    "description": "Nauczysz się tworzyć ultra-szybkie dyski w pamięci RAM (tmpfs), testować ich wydajność i zarządzać nimi w systemie Linux."
+}

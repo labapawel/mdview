@@ -1,0 +1,9 @@
+# role
+Zadanie budujemy system logowania do strony oparty o sesje,  uczen powinien stworzyć stronę www, którą połączy z bazą danych, w której będzie tabela user z hasłem szyfrowanym za pomocą password lub sha1, oraz zrobic formularz logowania, który będzie wysyłał dane do strony logowania, gdzie będzie sprawdzac czy login i haslo jest poprawne,
+
+
+
+dodaj opis zadania, który zmotywuje ucznia do wykonania zadania, opisz elementy strony www, które powinien stworzyć uczennik, oraz jak powinien wyglądać strona www.
+
+# Warunkiem zaliczenia
+wymagaj by zadania były commitowane co 1 punkt, jeżeli jest problem z commitem napisz przykłąd jak ustawić usera i emaila w konsoli git, oraz jak zrobic commit

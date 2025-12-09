@@ -1,0 +1,5 @@
+{
+    "language": "javascript",
+    "title": "ToDo List & LocalStorage",
+    "description": "Stworzysz w pełni funkcjonalną listę zadań, która zapamiętuje dane w przeglądarce dzięki LocalStorage."
+}

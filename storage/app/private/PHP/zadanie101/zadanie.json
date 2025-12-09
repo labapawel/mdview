@@ -1,0 +1,5 @@
+{
+    "language": "php",
+    "title": "System Logowania (Sesje)",
+    "description": "Stworzysz kompletny system logowania z wykorzystaniem sesji PHP i bazy danych MySQL. Nauczysz się bezpiecznie przechowywać hasła (hashing) i zarządzać dostępem do podstron."
+}
